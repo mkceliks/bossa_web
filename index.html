@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!--Bootstrap ve style.css eklenmesi.-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!--Jquery ve Chart.js eklenmesi.-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0-rc"></script>
+    <script src="https://unpkg.com/chart.js@2.8.0/dist/Chart.bundle.js"></script>
+    <script src="https://unpkg.com/chartjs-gauge@0.3.0/dist/chartjs-gauge.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-piechart-outlabels"></script>
+    
+    <!--Başlık-->
+    <title>Bossa Web Page</title>
+</head>
+<!--Navbar-->
+<header>
+  <div class="toolbar" role="banner">
+    <a href="index.html">
+      <img
+        width="80"
+        alt="Logo"
+        src="assets/images/images/bossa-logo.png"    
+      />
+    </a>
+    <!--Navbar Text-->
+    <div class="spacer"></div>
+      <span style="margin-left:auto;" class="mt-3" style="text-align: center;">
+        Best Quality Choice In Sustainability</span>
+      <div class="spacer"></div>
+        <!--Navbar Iconları-->
+        <div style="margin-right:2%;font-size: 1rem;">
+       <a href="https://www.facebook.com/bossagroup/"><i style="color: #1976d2;" class="fa-brands fa-facebook-f fa-fw"></i></a>
+       <a href="https://twitter.com/BossaDenim"> <i style="color: #1976d2;" class="fa-brands fa-twitter fa-fw"></i></a> 
+       <a href=" https://www.youtube.com/user/BossaGroup "><i style="color: #1976d2;" class="fa-brands fa-youtube fa-fw"></i></a> 
+       <a href="https://www.instagram.com/bossadenim/"><i style="color: #1976d2;" class="fa-brands fa-instagram fa-fw"></i></a> 
+      <a href="https://www.linkedin.com/company/bossa/"><i style="color: #1976d2;" class="fa-brands fa-linkedin-in fa-fw"></i></a>        
+             
+    </div>
+    </div>
+</header>
+<body>   
+  <div class="container">
+    <!--Butonlar-->
+    <div class="content" role="main">
+      <div class="card-container">
+    <button id="myBtn1" class="card card-small active">Fabric</button>
+    <button id="myBtn2" class="card card-small">LCA</button>
+    </div>
+    </div>
+      <!--Buton 1 e tıklandığında açılacak html kodu.-->
+      <div style="display: none;" id="table1" class="table-responsive">
+        <table class="table text-center">
+      <tbody>
+        <tr>
+          <th scope="row" class="text-center">X1X1X1X1X1X1X1X1X1X1X1X1</th>
+        </tr>
+        <tr>
+          <th scope="row" class="text-center">X1X1X1X1X1X1X1X1X1X1X1X1</th>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+    <!--Buton 2'ye tıklandığında açılacak html kodu.-->
+        <!--Ürün Açıklaması için başlık kısmı-->
+        <div style="display:none;" id="table2_header" class="container">
+         <p class="text-center mb-1 py-1 mt-1" style="font-size: 3vh;">Total LCA 207 mPt/T</p>
+       </div>
+       <!--Grafiklerin olduğu id'si table2 olan html kısmı-->
+    <div style="display: none;" id="table2">
+  </div>
+</body>
+
+</html><!--JavaScript Eklentileri.-->
+<script type="module" src="index.js"></script>
