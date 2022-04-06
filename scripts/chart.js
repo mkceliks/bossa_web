@@ -1,14 +1,12 @@
-function chart(data_1,data_2,myChart){ 
 
-    var data = [data_1,data_2];
-//Renk Paketi
-var colour_array = ["#008000", "#ADD8E6"];
+function chart(data_1,data_2,myChart,title){ //GRAFİK İÇİN GEREKLİ PARAMETRELER (data_1,data_2 = datalar ,,, myChart = chart id'si ,,, title = chart başlığı)
+var data = [data_1,data_2];//GRAFİK DATALARI
+var colour_array = ["#008000", "#ADD8E6"];//GRAFİK RENKLERİ
 
-//İlk Grafiğimiz
 const ctx = document.getElementById(''+myChart+'').getContext('2d');
  myChart = new Chart(ctx, {
-  type: "doughnut",
-  data: {
+  type: "doughnut",//Chart Tipi
+  data: {//Chart data detayları.
     datasets: [
         {
       data: data,
@@ -17,65 +15,31 @@ const ctx = document.getElementById(''+myChart+'').getContext('2d');
       borderWidth: 2
     }
 ]
+  },//Chart data detay bitiş
+  options: {  //Chart ayarları
+    responsive: false,
+      plugins: {
+        datalabels: {//Chart üstünde yazı kısmı ayarlaması.
+          anchor: 'end',
+          align: 'end',
+          labels: {
+            value: {
+              color: 'blue'
+            }
+          }
+        }//Chart üstünde yazı kısmı ayarlaması bitiş.
+      },
+  tooltips:false,//Chart üstüne gelince cıkan yazı false.
+    title: {//Her chart için başlık kısmı.
+      display: true,
+      text: title,//Parametreden gelen title yazısı.
+      fontSize:40,
+      fontStyle:'bold'
   },
-  options: {
-    //BAŞLIK KISMI
-      title: {
-        display: true,
-        text: 'Custom Chart Subtitle',
-
-    },
     responsive:false,
     mainAspectRatio:false,
     cutoutPercentage: 65,//Grafiğin Kalınlık Ayarı.
-
-    /*//Grafiğin ortasına text yazdırmak için gerekli.
-    /*elements: {
-      center: {
-      text: text,
-        color: 'black', // Grafiğin ortasındaki yazının rengi
-        fontStyle: 'Arial', // Grafiğin ortasındaki yazının fontu
-        sidePadding: 20,
-        minFontSize: 25, 
-        lineHeight: 25 
-      }
-    },*/
-
-    valueLabel: {
-      formatter: Math.round,
-      display: true
-    },
-    plugins: {
-       //Grafiğin üstündeki değer kutucuklarının yapılandırılması.
-      outlabels: {
-        display: true, 
-        text: ' %p\n%v',
-        color: 'white',//kutucukların yazı rengi.
-        stretch: 0, //Kutucukların Dışarı Yada İçeri doğru yapılandırılması.
-        borderRadius: 13,
-        font: {//Kutucukların yazı fontu
-          resizable: true,
-         minSize: 17,
-         maxSize: 17
-        },
-        padding: {
-          left:10,
-          right:10,
-          top:10,
-          bottom:10
-        },
-      },
-    },
-    layout: {
-      padding: 20,//KUTUCUKLARIN TAMAMININ GORUNMESI ICIN KATILDI.
-   },
-    rotation: 1 * Math.PI,
-    circumference: 2 * Math.PI,
-    //Grafiğin Üstüne gelince çıkan tooltip.
-    tooltips: {
-      enabled: false,
-    }
-  }
-});
+}
+ });
 }
 export {chart};
