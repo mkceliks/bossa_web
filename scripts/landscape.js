@@ -17,6 +17,6 @@ function landscape() {
   
   chart(2000,500,'myChart_4','title_4');//DÖRDÜNCÜ GRAFİĞİMİZ
   }
-    });
+    },{once : true});
 }
 export {landscape};
